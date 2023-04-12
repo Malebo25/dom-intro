@@ -6,12 +6,12 @@
   margin-bottom: 1em;
 }
 
-.warning {
+.warning{
   color: orange;
   font-weight: bold;
 }
 
-.danger {
+.danger{
   color: crimson;
   font-weight: bold;
 }
@@ -20,3 +20,11 @@
   font-weight: bold;
   font-size: 2em;
 }
+@media (max-width: 600px) {
+  text area {
+    width: 100%;
+  }
+}
+ text area {
+   max-width: 100%;
+ }
