@@ -18,8 +18,8 @@ var callsTotal = 0;
 var smsTotal = 0;
 function textBillTotal(){
     // get the value entered in the billType textfield
-    var billTypeEntered = billText.value.trim();
-    var billTypeEnteredtwo = billTypeEntered.toLowerCase();
+    var billTyped = billText.value.trim();
+    var billTypeEnteredtwo = billTyped.toLowerCase();
     // update the correct total
     if (billTypeEnteredtwo === "call"){
         callsTotal += 2.75

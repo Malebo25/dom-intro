@@ -15,7 +15,7 @@ var smsTotal = 0;
 
     function RadioBillTotal() {
         var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-        let billItemType = checkedRadioBtn.value
+        let billItemType = checkedRadioBtn.value;
     // get the value entered in the billType textfield
         var billTypeEntered = billItemType;
 
