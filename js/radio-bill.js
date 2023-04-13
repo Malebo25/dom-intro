@@ -18,7 +18,7 @@ var smsTotal = 0;
         let billItemType = checkedRadioBtn.value
     // get the value entered in the billType textfield
         var billTypeEntered = billItemType;
-   // alert(billTypeEntered)
+
     // update the correct total
     if (billTypeEntered === "call"){
         callsTotal += 2.75
