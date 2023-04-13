@@ -26,5 +26,13 @@
  } 
 
  body{
-  margin:auto;
+  max-width: 100%;
+ }
+ .billTypeText{
+  max-width: 100%;
+ }
+
+ .updateSettings{
+  max-width: 100%;
+  
  }
