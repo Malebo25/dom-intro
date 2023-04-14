@@ -65,10 +65,7 @@ function settingsBillTotal() {
         
         
     }
-    else {
-        errorElement.innerHTML = "Please enter 'sms' or 'call'";
-        
-    }
+    
    
     
     callSettingstotal.innerHTML = CallTotal.toFixed(2);

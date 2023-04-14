@@ -28,10 +28,7 @@ function RadioBillTotal() {
     else if (billTypeEntered === "sms"){
         smsTotal += 0.75;
     }
-    else {
-        errorElement.innerHTML = "Please enter 'sms' or 'call'";
-        
-    }
+   
     
     //update the totals that is displayed on the screen.
     totalCall.innerHTML = callsTotal.toFixed(2);

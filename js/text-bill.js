@@ -27,10 +27,7 @@ function textBillTotal(){
     else if (billTypeEnteredtwo === "sms"){
         smsTotal += 0.75;
     }
-    else {
-        errorElement.innerHTML = "Please enter 'sms' or 'call'";
-        
-    }
+   
     
     //update the totals that is displayed on the screen.
     addCall.innerHTML = callsTotal.toFixed(2);
