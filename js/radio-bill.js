@@ -13,15 +13,17 @@ const radioTotal = document.querySelector(".totalTwo");
 var callsTotal = 0;
 var smsTotal = 0;
 
-    function RadioBillTotal() {
-        var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-        let billItemType = checkedRadioBtn.value;
+function RadioBillTotal() {
+    var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+    let billItemType = checkedRadioBtn.value;
     // get the value entered in the billType textfield
-        var billTypeEntered = billItemType;
+    var billTypeEntered = billItemType;
+    
 
     // update the correct total
     if (billTypeEntered === "call"){
-        callsTotal += 2.75
+        callsTotal += 2.75;
+        
     }
     else if (billTypeEntered === "sms"){
         smsTotal += 0.75;
