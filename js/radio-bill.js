@@ -33,14 +33,14 @@ function RadioBillTotal() {
     //update the totals that is displayed on the screen.
     totalCall.innerHTML = callsTotal.toFixed(2);
     totalSms.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    radioTotal.innerHTML = totalCost.toFixed(2);
+    var Costtotal = callsTotal + smsTotal;
+    radioTotal.innerHTML = Costtotal.toFixed(2);
     
-    if (totalCost>=30 && totalCost <50){
+    if (Costtotal>=30 && Costtotal <50){
         // adding the danger class will make the text red
         radioTotal.classList.add("warning");
     }
-    else if (totalCost >= 50){
+    else if (Costtotal >= 50){
         radioTotal.classList.add("danger");
     }
 }

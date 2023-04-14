@@ -14,26 +14,27 @@ const Total = document.querySelector(".totalOne");
 
 //add an event listener for when the add button is pressed
 
-var callsTotal = 0;
-var smsTotal = 0;
+var totalCalls = 0;
+var totalsms = 0;
 function textBillTotal(){
     // get the value entered in the billType textfield
     var billTyped = billText.value.trim();
     var billTypeEnteredtwo = billTyped.toLowerCase();
     // update the correct total
     if (billTypeEnteredtwo === "call"){
-        callsTotal += 2.75
+        totalCalls += 2.75
     }
     else if (billTypeEnteredtwo === "sms"){
-        smsTotal += 0.75;
+        totalsms += 0.75;
     }
    
     
     //update the totals that is displayed on the screen.
-    addCall.innerHTML = callsTotal.toFixed(2);
-    addSms.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
+    addCall.innerHTML = totalCalls.toFixed(2);
+    addSms.innerHTML = totalsms.toFixed(2);
+    var totalCost = totalCalls + totalsms;
     Total.innerHTML = totalCost.toFixed(2);
+    
     
     if (totalCost>=30 && totalCost <50){
         // adding the danger class will make the text red
@@ -41,7 +42,9 @@ function textBillTotal(){
     }
     else if (totalCost >= 50){
         Total.classList.add("danger");
+
     }
+
 }
 
 

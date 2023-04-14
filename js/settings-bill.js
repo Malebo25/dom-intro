@@ -35,7 +35,8 @@ function settingsUpdate() {
 
     
     criticalLevel = Number(criticalSettings.value);
-    
+    document.querySelector(".settingsAddbtn").disabled = false;
+
     
 }
 updateSettingsBtn.addEventListener('click', settingsUpdate);
@@ -63,24 +64,47 @@ function settingsBillTotal() {
     else if (settingsBillTypeEntered === "sms"){
         SmsTotal += smsCost;
         
-        
     }
     
    
     
     callSettingstotal.innerHTML = CallTotal.toFixed(2);
-    smsSettingstotal.innerHTML = SmsTotal.toFixed(2);;
+    smsSettingstotal.innerHTML = SmsTotal.toFixed(2);
     var overallTotal = CallTotal + SmsTotal;
-    Totalsettings.innerHTML = overallTotal.toFixed(2);;
+    Totalsettings.innerHTML = overallTotal.toFixed(2);
+
+    callSettingstotal.classList.remove("callTotalSettings");
+    smsSettingstotal.classList.remove("smsTotalSettings");
+    Totalsettings.classList.remove("totalSettings");
+
+    Totalsettings.classList.remove("warning");
+    Totalsettings.classList.remove("danger");
     
-    if (overallTotal>=warningLevel && overallTotal <criticalLevel){
+        if (overallTotal>=warningLevel && overallTotal <criticalLevel){
+            
+             Totalsettings.classList.add("warning");
+         }
+        else if (overallTotal >=criticalLevel){
+            Totalsettings.classList.add("danger");
+
+            document.querySelector(".settingsAddbtn").disabled = true;
+        }
+    
+    // if (overallTotal <criticalLevel){
+    //     if (overallTotal>=warningLevel && overallTotal <criticalLevel){
+            
+    //          Totalsettings.classList.add("warning");
+    //     }
+    //     else {
+    //         Totalsettings.classList.add("danger");
+            
+    //     }
         
-        Totalsettings.classList.add("warning");
-    }
-    else if (overallTotal >=criticalLevel){
-        Totalsettings.classList.add("danger");
-    }
-}
+    // }
+        
+    
+    
+}``
 
 billSettingsAddBtn.addEventListener('click', settingsBillTotal);
 
