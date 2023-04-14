@@ -27,14 +27,14 @@ var criticalLevel = 0;
 
 function settingsUpdate() {
     
-    callCost = callSettings.value;
+    callCost = Number(callSettings.value);
     
-    smsCost = smsSettings.value;
+    smsCost = Number(smsSettings.value);
    
-    warningLevel = warningSettings.value;
+    warningLevel = Number(warningSettings.value);
 
     
-    criticalLevel = criticalSettings.value;
+    criticalLevel = Number(criticalSettings.value);
     
     
 }
@@ -42,45 +42,42 @@ updateSettingsBtn.addEventListener('click', settingsUpdate);
 // create a variables that will keep track of all three totals.
 
 
+var CallTotal = 0;
+var SmsTotal = 0;
 //add an event listener for when the add button is pressed
 function settingsBillTotal() {
-    var CallTotal = 0;
-    var SmsTotal = 0;
     var checkedSettingsBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
     let settingsBillItemType = checkedSettingsBtn.value;
-    // alert(settingsBillItemType);
+    
     var settingsBillTypeEntered = settingsBillItemType;
-    // alert(settingsBillTypeEntered);
+    
+    
    
-    
-    
     
     if (settingsBillTypeEntered === "call") {
         
         CallTotal += callCost;
         
         
-        
     }
     else if (settingsBillTypeEntered === "sms"){
         SmsTotal += smsCost;
-        alert(smsCost);
-        alert(SmsTotal);
+        
         
     }
     else {
         errorElement.innerHTML = "Please enter 'sms' or 'call'";
         
     }
+   
     
-    //update the totals that is displayed on the screen.
     callSettingstotal.innerHTML = CallTotal.toFixed(2);
-    smsSettingstotal.innerHTML = SmsTotal.toFixed(2);
+    smsSettingstotal.innerHTML = SmsTotal.toFixed(2);;
     var overallTotal = CallTotal + SmsTotal;
-    Totalsettings.innerHTML = overallTotal.toFixed(2);
+    Totalsettings.innerHTML = overallTotal.toFixed(2);;
     
     if (overallTotal>=warningLevel && overallTotal <criticalLevel){
-        // adding the danger class will make the text red
+        
         Totalsettings.classList.add("warning");
     }
     else if (overallTotal >=criticalLevel){
