@@ -14,38 +14,36 @@ const billStringElement = document.querySelector(".billString");
 //  * once done looping over all the entries - display the total onto the screen in the billTotal element
 
 //link the function to a click event on the calculate button
-function calculateBtnClicked(){
-    // get the string entered in the textArea
-    var billString = billStringElement.value;
-    //split the string
-    var billItems = billString.split(",");
-    // a variable for the total phone bill.
-    var billTotal = 0;
-    //loop over all the bill items
-    for (var i=0;i<billItems.length;i++){ 
-        var billItem = billItems[i].trim();
-        var billItemtwo = billItem.toLowerCase();
-        if (billItemtwo === "call"){
-            billTotal += 2.75;
-        }
-        else if (billItemtwo === "sms"){
-            billTotal += 0.75;
-        }
+function calculateBtnClicked() {
+  // get the string entered in the textArea
+  var billString = billStringElement.value;
+  //split the string
+  var billItems = billString.split(",");
+  // a variable for the total phone bill.
+  var billTotal = 0;
+  //loop over all the bill items
+  for (var i = 0; i < billItems.length; i++) {
+    var billItem = billItems[i].trim();
+    var billItemtwo = billItem.toLowerCase();
+    if (billItemtwo === "call") {
+      billTotal += 2.75;
+    } else if (billItemtwo === "sms") {
+      billTotal += 0.75;
     }
-    
-    //round to two decimals
-    var roundedBillTotal = billTotal.toFixed(2);
-    billTotalElement.innerHTML = roundedBillTotal;
+  }
 
-    billTotalElement.classList.remove("warning");
-    billTotalElement.classList.remove("danger");
+  //round to two decimals
+  var roundedBillTotal = billTotal.toFixed(2);
+  billTotalElement.innerHTML = roundedBillTotal;
 
-    if (billTotal >=20 && billTotal <30){
-        // adding the danger class will make the text red
-        billTotalElement.classList.add("warning");
-    }
-    else if (billTotal >= 30){
-        billTotalElement.classList.add("danger");
-    }
+  billTotalElement.classList.remove("warning");
+  billTotalElement.classList.remove("danger");
+
+  if (billTotal >= 20 && billTotal < 30) {
+    // adding the danger class will make the text red
+    billTotalElement.classList.add("warning");
+  } else if (billTotal >= 30) {
+    billTotalElement.classList.add("danger");
+  }
 }
-buttonElement.addEventListener('click', calculateBtnClicked);
+buttonElement.addEventListener("click", calculateBtnClicked);
