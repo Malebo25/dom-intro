@@ -85,9 +85,3 @@ function settingsBillTotal() {
 
 billSettingsAddBtn.addEventListener("click", settingsBillTotal);
 
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the call / sms total
-// * add the appropriate value to the overall total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen.
-// * check the value thresholds and display the total value in the right color.
